@@ -1,3 +1,7 @@
+terraform {
+  experiments = [module_variable_optional_attrs]
+}
+
 //PROJECT
 variable "google_project_iam_bindings" {
   type = list(object({
