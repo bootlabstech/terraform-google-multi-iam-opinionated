@@ -11,9 +11,9 @@ resource "google_project_iam_binding" "binding" {
   dynamic "condition" {
     for_each = each.value.condition != null ? [1] : [0]
     content {
-			title			  = each.value.condition.title
-			description = each.value.condition.description
-			expression  = each.value.condition.expression
+			title			  = condition.value.title
+			description = condition.value.description
+			expression  = condition.value.condition.expression
 		}
   }
 }
@@ -27,9 +27,9 @@ resource "google_project_iam_member" "member" {
   dynamic "condition" {
     for_each = each.value.condition != null ? [1] : [0]
     content {
-			title			  = each.value.condition.title
-			description = each.value.condition.description
-			expression  = each.value.condition.expression
+			title			  = condition.value.title
+			description = condition.value.description
+			expression  = condition.value.condition.expression
 		}
   }
 }
@@ -42,11 +42,11 @@ resource "google_storage_bucket_iam_binding" "binding" {
   members  = each.value.members
 
   dynamic "condition" {
-    for_each = each.value.condition != null ? [1] : [0]
+    for_each = each.value.condition != null ? [each.value.condition] : [0]
     content {
-			title			  = each.value.condition.title
-			description = each.value.condition.description
-			expression  = each.value.condition.expression
+			title			  = condition.value.title
+			description = condition.value.description
+			expression  = condition.value.condition.expression
 		}
   }
 }
@@ -60,9 +60,9 @@ resource "google_storage_bucket_iam_member" "member" {
   dynamic "condition" {
     for_each = each.value.condition != null ? [1] : [0]
     content {
-			title			  = each.value.condition.title
-			description = each.value.condition.description
-			expression  = each.value.condition.expression
+			title			  = condition.value.title
+			description = condition.value.description
+			expression  = condition.value.condition.expression
 		}
   }
 }
