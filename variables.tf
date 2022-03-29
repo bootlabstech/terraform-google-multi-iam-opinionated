@@ -73,6 +73,7 @@ variable "google_dataproc_cluster_iam_bindings" {
   type = list(object({
     unique               = number,
     project              = string,
+    region               = string,
     cluster              = string,
     role                 = string,
     members              = list(string),
@@ -90,6 +91,7 @@ variable "google_dataproc_cluster_iam_members" {
   type = list(object({
     unique               = number,
     project              = string,
+    region               = string,
     cluster              = string,
     role                 = string,
     member               = string,
