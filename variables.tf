@@ -67,3 +67,36 @@ variable "google_storage_bucket_iam_members" {
   description = "List of storage bucket iam members."
   default     = []
 }
+
+//DATAPROC
+variable "google_dataproc_cluster_iam_bindings" {
+  type = list(object({
+    unique               = number,
+    cluster              = string,
+    role                 = string,
+    members              = list(string),
+    # condition            = optional(object({
+    #     title       = string,
+    #     expression  = string,
+    #     description = optional(string)
+    # }))
+  }))
+  description = "List of data proc iam bindings."
+  default     = []
+}
+
+variable "google_dataproc_cluster_iam_members" {
+  type = list(object({
+    unique               = number,
+    cluster              = string,
+    role                 = string,
+    member               = string,
+    # condition            = optional(object({
+    #     title       = string,
+    #     expression  = string,
+    #     description = optional(string)
+    # }))
+  }))
+  description = "List of data proc iam members."
+  default     = []
+}
