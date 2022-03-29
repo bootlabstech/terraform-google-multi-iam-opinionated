@@ -99,3 +99,41 @@ resource "google_dataproc_cluster_iam_member" "member" {
 	# 	}
   # }
 }
+
+
+//COMPUTE_INSTANCE
+resource "google_compute_instance_iam_binding" "binding" {
+  for_each = { for binding in var.google_compute_instance_iam_bindings : binding.unique => binding }
+  project       = each.value.project
+  zone          = each.value.zone
+  instance_name = each.value.instance_name
+  role          = each.value.role
+  members       = each.value.members
+
+  # dynamic "condition" {
+  #   for_each = each.value.condition != null ? [each.value.condition] : [0]
+  #   content {
+	# 		title			  = condition.value.title
+	# 		description = condition.value.description
+	# 		expression  = condition.value.condition.expression
+	# 	}
+  # }
+}
+
+resource "google_compute_instance_iam_member" "member" {
+  for_each = { for member in var.google_dataproc_cluster_iam_members : member.unique => member }
+  project       = each.value.project
+  zone          = each.value.zone
+  instance_name = each.value.instance_name
+  role          = each.value.role
+  member        = each.value.member
+
+  # dynamic "condition" {
+  #   for_each = each.value.condition != null ? [1] : [0]
+  #   content {
+	# 		title			  = condition.value.title
+	# 		description = condition.value.description
+	# 		expression  = condition.value.condition.expression
+	# 	}
+  # }
+}
