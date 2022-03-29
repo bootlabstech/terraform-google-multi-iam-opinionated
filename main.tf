@@ -137,3 +137,36 @@ resource "google_compute_instance_iam_member" "member" {
 	# 	}
   # }
 }
+
+//SERVICE_ACCOUNT
+resource "google_service_account_iam_binding" "binding" {
+  for_each = { for binding in var.google_service_account_iam_bindings : binding.unique => binding }
+  service_account_id = each.value.service_account_id
+  role               = each.value.role
+  members            = each.value.members
+
+  # dynamic "condition" {
+  #   for_each = each.value.condition != null ? [each.value.condition] : [0]
+  #   content {
+	# 		title			  = condition.value.title
+	# 		description = condition.value.description
+	# 		expression  = condition.value.condition.expression
+	# 	}
+  # }
+}
+
+resource "google_service_account_iam_member" "member" {
+  for_each = { for member in var.google_service_account_iam_members : member.unique => member }
+  service_account_id = each.value.service_account_id
+  role          = each.value.role
+  member        = each.value.member
+
+  # dynamic "condition" {
+  #   for_each = each.value.condition != null ? [1] : [0]
+  #   content {
+	# 		title			  = condition.value.title
+	# 		description = condition.value.description
+	# 		expression  = condition.value.condition.expression
+	# 	}
+  # }
+}

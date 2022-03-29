@@ -137,3 +137,36 @@ variable "google_compute_instance_iam_members" {
   description = "List of compute instance iam members."
   default     = []
 }
+
+//SERVICE_ACCOUNT
+variable "google_service_account_iam_bindings" {
+  type = list(object({
+    unique               = number,
+    service_account_id   = string,
+    role                 = string,
+    members              = list(string),
+    # condition            = optional(object({
+    #     title       = string,
+    #     expression  = string,
+    #     description = optional(string)
+    # }))
+  }))
+  description = "List of service account iam bindings."
+  default     = []
+}
+
+variable "google_service_account_iam_members" {
+  type = list(object({
+    unique               = number,
+    service_account_id   = string,
+    role                 = string,
+    member               = string,
+    # condition            = optional(object({
+    #     title       = string,
+    #     expression  = string,
+    #     description = optional(string)
+    # }))
+  }))
+  description = "List of service account iam members."
+  default     = []
+}
