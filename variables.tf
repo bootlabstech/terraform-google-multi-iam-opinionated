@@ -72,6 +72,7 @@ variable "google_storage_bucket_iam_members" {
 variable "google_dataproc_cluster_iam_bindings" {
   type = list(object({
     unique               = number,
+    project              = string,
     cluster              = string,
     role                 = string,
     members              = list(string),
@@ -88,6 +89,7 @@ variable "google_dataproc_cluster_iam_bindings" {
 variable "google_dataproc_cluster_iam_members" {
   type = list(object({
     unique               = number,
+    project              = string,
     cluster              = string,
     role                 = string,
     member               = string,
