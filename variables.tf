@@ -129,3 +129,8 @@ variable "google_service_account_iam_members" {
   description = "List of service account iam members."
   default     = []
 }
+
+variable "dummy" {
+  type = string
+  description = "value"
+}
