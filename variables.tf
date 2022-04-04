@@ -7,7 +7,6 @@ variable "google_project_iam_bindings" {
     members              = list(string),
   }))
   description = "List of project iam members."
-  default     = []
 }
 
 variable "google_project_iam_members" {
@@ -19,7 +18,6 @@ variable "google_project_iam_members" {
     
   }))
   description = "List of project iam members."
-  default     = []
 }
 
 //STORAGE
@@ -32,7 +30,6 @@ variable "google_storage_bucket_iam_bindings" {
     
   }))
   description = "List of storage bucket iam bindings."
-  default     = []
 }
 
 variable "google_storage_bucket_iam_members" {
@@ -44,7 +41,6 @@ variable "google_storage_bucket_iam_members" {
     
   }))
   description = "List of storage bucket iam members."
-  default     = []
 }
 
 //DATAPROC
@@ -59,7 +55,6 @@ variable "google_dataproc_cluster_iam_bindings" {
     
   }))
   description = "List of data proc iam bindings."
-  default     = []
 }
 
 variable "google_dataproc_cluster_iam_members" {
@@ -73,7 +68,6 @@ variable "google_dataproc_cluster_iam_members" {
     
   }))
   description = "List of data proc iam members."
-  default     = []
 }
 
 //COMPUTE_INSTANCE
@@ -88,7 +82,6 @@ variable "google_compute_instance_iam_bindings" {
     
   }))
   description = "List of compute instance iam bindings."
-  default     = []
 }
 
 variable "google_compute_instance_iam_members" {
@@ -102,7 +95,6 @@ variable "google_compute_instance_iam_members" {
     
   }))
   description = "List of compute instance iam members."
-  default     = []
 }
 
 //SERVICE_ACCOUNT
@@ -115,7 +107,6 @@ variable "google_service_account_iam_bindings" {
     
   }))
   description = "List of service account iam bindings."
-  default     = []
 }
 
 variable "google_service_account_iam_members" {
@@ -127,10 +118,4 @@ variable "google_service_account_iam_members" {
     
   }))
   description = "List of service account iam members."
-  default     = []
-}
-
-variable "dummy" {
-  type = string
-  description = "value"
 }
