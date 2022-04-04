@@ -15,7 +15,6 @@ variable "google_project_iam_members" {
     project              = string,
     role                 = string,
     member               = string,
-    
   }))
   description = "List of project iam members."
 }
@@ -27,7 +26,6 @@ variable "google_storage_bucket_iam_bindings" {
     bucket               = string,
     role                 = string,
     members              = list(string),
-    
   }))
   description = "List of storage bucket iam bindings."
 }
@@ -38,7 +36,6 @@ variable "google_storage_bucket_iam_members" {
     bucket               = string,
     role                 = string,
     member               = string,
-    
   }))
   description = "List of storage bucket iam members."
 }
@@ -52,7 +49,6 @@ variable "google_dataproc_cluster_iam_bindings" {
     cluster              = string,
     role                 = string,
     members              = list(string),
-    
   }))
   description = "List of data proc iam bindings."
 }
@@ -65,7 +61,6 @@ variable "google_dataproc_cluster_iam_members" {
     cluster              = string,
     role                 = string,
     member               = string,
-    
   }))
   description = "List of data proc iam members."
 }
@@ -79,7 +74,6 @@ variable "google_compute_instance_iam_bindings" {
     instance_name        = string,
     role                 = string,
     members              = list(string),
-    
   }))
   description = "List of compute instance iam bindings."
 }
@@ -92,7 +86,6 @@ variable "google_compute_instance_iam_members" {
     instance_name        = string,
     role                 = string,
     member               = string,
-    
   }))
   description = "List of compute instance iam members."
 }
@@ -104,7 +97,6 @@ variable "google_service_account_iam_bindings" {
     service_account_id   = string,
     role                 = string,
     members              = list(string),
-    
   }))
   description = "List of service account iam bindings."
 }
@@ -115,7 +107,6 @@ variable "google_service_account_iam_members" {
     service_account_id   = string,
     role                 = string,
     member               = string,
-    
   }))
   description = "List of service account iam members."
 }
