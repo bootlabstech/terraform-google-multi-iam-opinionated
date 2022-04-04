@@ -4,7 +4,7 @@ variable "google_project_iam_bindings" {
     unique               = number,
     project              = string,
     role                 = string,
-    members              = list(string),
+    members              = list(string)
   }))
   description = "List of project iam members."
 }
@@ -14,7 +14,7 @@ variable "google_project_iam_members" {
     unique               = number,
     project              = string,
     role                 = string,
-    member               = string,
+    member               = string
   }))
   description = "List of project iam members."
 }
